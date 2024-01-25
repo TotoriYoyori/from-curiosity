@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Lina Eriksson
-  unitLevel: 5
+  unitLevel: 
   damage: 5
   maxHP: 50
   currentHP: 50
