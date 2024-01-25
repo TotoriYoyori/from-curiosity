@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum battleState { START, PLAYERTURN, ENEMYTURN, WON, LOST };
 
@@ -16,6 +18,8 @@ public class battleManager : MonoBehaviour
     unit playerUnit;
     unit enemyUnit;
 
+    public TMP_Text dialogueText;
+
     public battleState state;
 
     // Start is called before the first frame update
@@ -28,8 +32,12 @@ public class battleManager : MonoBehaviour
     void setupBattle() 
     {
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerGO.GetComponent<unit>();
-        Instantiate(enemyPrefab, enemyBattleStation);
+        playerUnit = playerGO.GetComponent<unit>();
+
+        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        enemyUnit = enemyGO.GetComponent<unit>();
+
+        dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
     }
 
 }

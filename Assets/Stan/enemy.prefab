@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8032438397859339104}
   - component: {fileID: 2088774199737426793}
   m_Layer: 0
-  m_Name: enemy 1
+  m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d07dd1b5514fa4ca8b9c900cfecfaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: 
+  unitName: Lina Eriksson
   unitLevel: 5
   damage: 5
   maxHP: 50
