@@ -15,5 +15,24 @@ Engage in tactical battles against a variety of monstrous foes. Plan your synthe
 ### Dynamic Effects and Combos
 Experiment with diverse combinations of catalysts to unleash a multitude of effects. From elemental blasts using combustion to protective barriers using electrolysis, your strategic choices in crafting will determine the outcome of each encounter.
 
-### Rich Alchemical World:
+### Rich Alchemical World
 Explore a dull and lifeless world filled with eldricht landscapes and ancient ruins. In this world, mastery over chemistry is the only way to survival, and eventually save it from its lifelessness. 
+
+# Turn-based combat loops
+### 1. Elements spawn on the battle
+Every turn, a random amount of interactable elements (Carbon, Hydrogen, Oxygen, etc.) will spawn on game scene that the players can interact with to add to a crafting system. 
+
+### 2. Craft molecules for your turn
+During the player's turn, they can experiment and craft any molecules that are accepted by the game's algorithms. The game will check for valid/invalid molecules. If the molecule is valid, the players may attack and end their turn.
+
+### 3. Enemy's turn begins
+During the enemy's turn, they will deal a variety of effects against the players. 
+
+### 4. Consumed elements get refreshed
+The elements that were consumed on the player's previous turn for synthesis will be refreshed. Return to step 2, and continue the turn-based game loops until either the player or the monster is defeated. 
+
+# Contributors
+- Stan Nguyen (P.O)
+- Gabriel Stasi (Scrum Master)
+- Ivan Sazonov (Programmer)
+- Sara Eriksson (Art Lead)
