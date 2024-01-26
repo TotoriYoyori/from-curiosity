@@ -15,7 +15,7 @@ Engage in tactical battles against a variety of monstrous foes. Plan your synthe
 ### Dynamic Effects and Combos
 Experiment with diverse combinations of catalysts to unleash a multitude of effects. From elemental blasts using combustion to protective barriers using electrolysis, your strategic choices in crafting will determine the outcome of each encounter.
 
-### Rich Alchemical World
+### A Lifeless World where Chemistry Dwells
 Explore a dull and lifeless world filled with eldricht landscapes and ancient ruins. In this world, mastery over chemistry is the only way to survival, and eventually save it from its lifelessness. 
 
 # Turn-based combat loops
