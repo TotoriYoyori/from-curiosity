@@ -1,4 +1,5 @@
-![from curiosity](https://github.com/TotoriYoyori/from-curiosity/assets/89681094/968d18d5-b195-4a38-9be4-9d43e831201b)
+![title-screen](https://github.com/TotoriYoyori/from-curiosity/assets/89681094/01addf29-e181-468d-80c2-641154668d74)
+
 Welcome to the realm of molecular mastery in From Curiosity! Dive into a unique fusion of word puzzle mechanics and alchemical wonders where your linguistic skills meet your chemical expertise. Become the master of elements as you concoct powerful molecules to combat fearsome monsters in an epic journey through a dead world, where chemistry is its only salvation. 
 
 As an aspiring chemist, you wield the power to combine elements not just to create compounds but to vanquish adversaries. Unlike traditional word puzzles, From Curiosity challenges you to assemble molecules instead of words, each combination unlocking potent effects to aid you in combat. 
