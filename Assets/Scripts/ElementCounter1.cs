@@ -45,5 +45,9 @@ public class ObjectTracker1 : MonoBehaviour
             TextElements.text = "";
             ElementType.text = "";
         }
+        if (objectCount == 1)
+        {
+            TextElements.text = "";
+        }
     }
 }
