@@ -1,11 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using JetBrains.Annotations;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum battleState { START, PLAYERTURN, ENEMYTURN, WON, LOST };
 
@@ -26,21 +21,26 @@ public class battleManager : MonoBehaviour
     public battleHUD enemyHUD;
 
     public battleState state;
+    public AttackEffect attackEffect;
 
     private string currentMolecule;
+
     public void setMolecule(string molecule)
     {
         currentMolecule = molecule;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        state = battleState.START;
-        StartCoroutine( setupBattle() );
+    Debug.Log("Battle Manager Started");
+    if (attackEffect == null)
+        Debug.LogError("Attack Effect is not assigned.");
+
+    state = battleState.START;
+    StartCoroutine(SetupBattle());
     }
 
-    IEnumerator setupBattle() 
+    IEnumerator SetupBattle() 
     {
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<unit>();
@@ -66,75 +66,77 @@ public class battleManager : MonoBehaviour
         if (dmgModifier >= +2)
         {
             dialogueText.text = "You created an advanced molecule";
-        } else if (dmgModifier < 0)
+        } 
+        else if (dmgModifier < 0)
         {
             dialogueText.text = "You created a simple molecule";
-        } else 
+        } 
+        else 
         {
             dialogueText.text = "From your hands come creations";
         }
 
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage + dmgModifier);
+        attackEffect.TriggerAttackEffect(true); // Player attack
+
+        yield return new WaitForSeconds(0.5f);
 
         if(isDead)
         {
             state = battleState.WON;
-            enemyHUD.setHP(enemyUnit.currentHP = 0);
+            enemyHUD.setHP(0); // Update HP display
             dialogueText.text = "Lina has feinted.";
             endBattle();
-        } else
+        } 
+        else
         {
             state = battleState.ENEMYTURN;
-            enemyHUD.setHP(enemyUnit.currentHP);
+            enemyHUD.setHP(enemyUnit.currentHP); // Update HP display
             yield return new WaitForSeconds(2f);
-
-            StartCoroutine( enemyTurn() );
+            StartCoroutine(EnemyTurn());
         }
     }
 
     IEnumerator playerHeal()
     {
         playerUnit.Heal(15);
-
         state = battleState.ENEMYTURN;
-
-        playerHUD.setHP(playerUnit.currentHP);
+        playerHUD.setHP(playerUnit.currentHP); // Update HP display
         dialogueText.text = "You consider " + enemyUnit.unitName + " questions...";
-
         yield return new WaitForSeconds(2f);
-
-       StartCoroutine( enemyTurn() ); 
-
+        StartCoroutine(EnemyTurn());
     }
 
-
-    IEnumerator enemyTurn()
+    IEnumerator EnemyTurn()
     {
-        int dmgModifier = Random.Range(4,-5);
+        int dmgModifier = Random.Range(4, -5);
 
         if (dmgModifier >= 3)
         {
             dialogueText.text = enemyUnit.unitName + " questions the Gods.";
-        } else if (dmgModifier < 0)
+        } 
+        else if (dmgModifier < 0)
         {
             dialogueText.text = enemyUnit.unitName + " asks a simple question.";
-        } else 
+        } 
+        else 
         {
             dialogueText.text = enemyUnit.unitName + " quizzes you!";
         }
         
-        // Move turn token above enemy's head?
         yield return new WaitForSeconds(1f);
 
-        bool isDead = playerUnit.TakeDamage (enemyUnit.damage + dmgModifier);
-        playerHUD.setHP(playerUnit.currentHP);
+        bool isDead = playerUnit.TakeDamage(enemyUnit.damage + dmgModifier);
+        playerHUD.setHP(playerUnit.currentHP); // Update HP display
+        attackEffect.TriggerAttackEffect(false); // Enemy attack
         yield return new WaitForSeconds(1f);
         
         if(isDead)
         {
             state = battleState.LOST;
             endBattle();
-        } else 
+        } 
+        else 
         {
             state = battleState.PLAYERTURN;
             playerTurn();
