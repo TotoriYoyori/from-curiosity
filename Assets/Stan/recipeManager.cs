@@ -1,74 +1,57 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RecipeManager : MonoBehaviour
 {
     public GameObject recipePanel;
-    public GameObject recipeBook; 
-    public GameObject exitButton; 
+    public Button recipeBookButton;
+    public GameObject exitButton;
 
-    private bool isPanelVisible = false; 
+    public bool isPanelVisible = false;
 
     void Start()
     {
         MovePanelOffScreen();
+        recipeBookButton.onClick.AddListener(ToggleRecipePanel);
+        exitButton.GetComponent<Button>().onClick.AddListener(HideRecipePanel);
+        // Add a listener to the main camera for mouse clicks to hide the panel
+        Camera.main.gameObject.AddComponent<ClickDetector>().recipeManager = this;
     }
 
-    void Update()
+    public void ToggleRecipePanel()
     {
-        if (Input.GetMouseButtonDown(0))
+        isPanelVisible = !isPanelVisible;
+        if (isPanelVisible)
         {
-            Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            if (IsClickOnSprite(clickPosition, recipeBook))
-            {
-                ShowRecipePanel();
-            }
-            else if (IsClickOnSprite(clickPosition, exitButton) && isPanelVisible)
-            {
-                HideRecipePanel();
-            }
+            ShowRecipePanel();
+        }
+        else
+        {
+            HideRecipePanel();
         }
     }
 
-    void ShowRecipePanel()
+    public void ShowRecipePanel()
     {
         isPanelVisible = true;
         recipePanel.SetActive(true);
         MovePanelOnScreen();
     }
 
-    void HideRecipePanel()
+    public void HideRecipePanel()
     {
         isPanelVisible = false;
+        recipePanel.SetActive(false);
         MovePanelOffScreen();
     }
 
     void MovePanelOnScreen()
     {
-        recipePanel.transform.position = new Vector3(0f, 0f, 0f);
+        recipePanel.transform.position = new Vector3(0f, 0.25f, 0f);
     }
 
     void MovePanelOffScreen()
     {
         recipePanel.transform.position = new Vector3(2000f, 0f, 0f);
-    }
-    
-    bool IsClickOnSprite(Vector2 clickPosition, GameObject spriteObject)
-    {
-        if (spriteObject == null)
-        {
-            Debug.LogError("SpriteObject is null. Please assign a valid GameObject reference.");
-            return false;
-        }
-
-        Collider2D collider = spriteObject.GetComponent<Collider2D>();
-        
-        if (collider == null)
-        {
-            Debug.LogError("Collider2D component is missing on " + spriteObject.name);
-            return false;
-        }
-
-        return collider.bounds.Contains(clickPosition);
     }
 }

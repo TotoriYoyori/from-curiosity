@@ -48,7 +48,7 @@ public class battleManager : MonoBehaviour
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<unit>();
 
-        dialogueText.text = enemyUnit.unitName + " wants to quiz you...";
+        dialogueText.text = "A "+ enemyUnit.unitName + " will challenge your chemistry knowledge";
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
@@ -65,15 +65,15 @@ public class battleManager : MonoBehaviour
 
         if (dmgModifier >= +2)
         {
-            dialogueText.text = "You created an advanced molecule";
+            dialogueText.text = "Your hand overflows with chemical magics!";
         } 
         else if (dmgModifier < 0)
         {
-            dialogueText.text = "You created a simple molecule";
+            dialogueText.text = "You created a simple compound.";
         } 
         else 
         {
-            dialogueText.text = "From your hands come creations";
+            dialogueText.text = "From your hands come chemical creations";
         }
 
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage + dmgModifier);
@@ -85,7 +85,7 @@ public class battleManager : MonoBehaviour
         {
             state = battleState.WON;
             enemyHUD.setHP(0); // Update HP display
-            dialogueText.text = "Lina has feinted.";
+            dialogueText.text = enemyUnit.unitName + " has feinted.";
             endBattle();
         } 
         else
@@ -102,7 +102,7 @@ public class battleManager : MonoBehaviour
         playerUnit.Heal(15);
         state = battleState.ENEMYTURN;
         playerHUD.setHP(playerUnit.currentHP); // Update HP display
-        dialogueText.text = "You consider " + enemyUnit.unitName + " questions...";
+        dialogueText.text = "You reconsider your options.";
         yield return new WaitForSeconds(2f);
         StartCoroutine(EnemyTurn());
     }
@@ -113,15 +113,15 @@ public class battleManager : MonoBehaviour
 
         if (dmgModifier >= 3)
         {
-            dialogueText.text = enemyUnit.unitName + " questions the Gods.";
+            dialogueText.text = enemyUnit.unitName + " critically strikes!";
         } 
         else if (dmgModifier < 0)
         {
-            dialogueText.text = enemyUnit.unitName + " asks a simple question.";
+            dialogueText.text = enemyUnit.unitName + " deals some chip damage.";
         } 
         else 
         {
-            dialogueText.text = enemyUnit.unitName + " quizzes you!";
+            dialogueText.text = enemyUnit.unitName + " lands an attack!";
         }
         
         yield return new WaitForSeconds(1f);
@@ -193,7 +193,7 @@ public class battleManager : MonoBehaviour
 
     void playerTurn()
     {
-        dialogueText.text = "Craft a molecule to attack";
+        dialogueText.text = "Craft a valid molecule to attack";
         // Move turn token above player's head?
     }
 
