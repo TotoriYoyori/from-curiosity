@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 17877f633a8c2a34cb19c56c1701d40e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Regencie Alt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 20aec3ad8d4b38149b0d29230d05b10f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d07dd1b5514fa4ca8b9c900cfecfaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Jakob Rogert
+  unitName: Fire Slime
   unitLevel: 
   damage: 5
   maxHP: 50
