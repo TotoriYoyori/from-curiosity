@@ -27,6 +27,12 @@ public class battleManager : MonoBehaviour
 
     public battleState state;
 
+    private string currentMolecule;
+    public void setMolecule(string molecule)
+    {
+        currentMolecule = molecule;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,16 +61,17 @@ public class battleManager : MonoBehaviour
 
     IEnumerator playerAttack()
     {
-        int dmgModifier = Random.Range(-4 , +5);
-        if (dmgModifier >= +4)
+        int dmgModifier = calculateDamageModifier(currentMolecule);
+
+        if (dmgModifier >= +2)
         {
-            dialogueText.text = "Your bullshit was super-effective.";
+            dialogueText.text = "You created an advanced molecule";
         } else if (dmgModifier < 0)
         {
-            dialogueText.text = "Lina doesn't believe you.";
+            dialogueText.text = "You created a simple molecule";
         } else 
         {
-            dialogueText.text = "You bullshit a theory seminar.";
+            dialogueText.text = "From your hands come creations";
         }
 
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage + dmgModifier);
@@ -92,7 +99,7 @@ public class battleManager : MonoBehaviour
         state = battleState.ENEMYTURN;
 
         playerHUD.setHP(playerUnit.currentHP);
-        dialogueText.text = "You consider Lina's questions...";
+        dialogueText.text = "You consider " + enemyUnit.unitName + " questions...";
 
         yield return new WaitForSeconds(2f);
 
@@ -103,14 +110,14 @@ public class battleManager : MonoBehaviour
 
     IEnumerator enemyTurn()
     {
-        int dmgModifier = Random.Range(-4 , +5);
+        int dmgModifier = Random.Range(4,-5);
 
-        if (dmgModifier >= +4)
+        if (dmgModifier >= 3)
         {
-            dialogueText.text = "Lina questions the Gods.";
+            dialogueText.text = enemyUnit.unitName + " questions the Gods.";
         } else if (dmgModifier < 0)
         {
-            dialogueText.text = "Lina asks a simple question.";
+            dialogueText.text = enemyUnit.unitName + " asks a simple question.";
         } else 
         {
             dialogueText.text = enemyUnit.unitName + " quizzes you!";
@@ -119,7 +126,7 @@ public class battleManager : MonoBehaviour
         // Move turn token above enemy's head?
         yield return new WaitForSeconds(1f);
 
-        bool isDead = playerUnit.TakeDamage (enemyUnit.damage + Random.Range(-4 , +5));
+        bool isDead = playerUnit.TakeDamage (enemyUnit.damage + dmgModifier);
         playerHUD.setHP(playerUnit.currentHP);
         yield return new WaitForSeconds(1f);
         
@@ -132,6 +139,43 @@ public class battleManager : MonoBehaviour
             state = battleState.PLAYERTURN;
             playerTurn();
         }
+    }
+
+    private int calculateDamageModifier(string molecule)
+    {
+        int dmgModifier = 0;
+        switch(molecule)
+        {
+            case "O2":
+            case "HCl":
+            case "NaCl":
+                dmgModifier = -3;
+                break;
+            case "H2O":
+                dmgModifier = -1;
+                break;
+            case "SO3":
+            case "ClO3":
+            case "NO3":
+            case "CO3":
+                dmgModifier = +1;
+                break;
+            case "CH4":
+                dmgModifier = +3;
+                break;
+            case "C2H4":
+            case "C2H6":
+                dmgModifier = +5;
+                break;
+            case "C3H8":
+                dmgModifier = +20;
+                break;
+            default:
+                dmgModifier = 0;
+                break;
+        }
+
+        return dmgModifier;
     }
 
     void endBattle()
@@ -147,7 +191,7 @@ public class battleManager : MonoBehaviour
 
     void playerTurn()
     {
-        dialogueText.text = "Craft a molecule to attack or heal";
+        dialogueText.text = "Craft a molecule to attack";
         // Move turn token above player's head?
     }
 
