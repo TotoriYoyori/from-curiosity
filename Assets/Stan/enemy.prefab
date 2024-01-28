@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d07dd1b5514fa4ca8b9c900cfecfaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Lina Emilsson
+  unitName: Jakob Rogert
   unitLevel: 
   damage: 5
   maxHP: 50

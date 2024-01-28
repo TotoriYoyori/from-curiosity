@@ -3,13 +3,23 @@ using UnityEngine;
 public class CustomCursor : MonoBehaviour
 {
     public Texture2D customCursorTexture;
+    public Vector2 hotspot = Vector2.zero;
 
     void Start()
     {
-        Cursor.SetCursor(customCursorTexture, Vector2.zero, CursorMode.Auto);
+        SetCustomCursor(customCursorTexture, hotspot);
     }
+
+    public void SetCustomCursor(Texture2D cursorTexture, Vector2 customHotspot)
+    {
+        customCursorTexture = cursorTexture;
+        hotspot = customHotspot;
+
+        Cursor.SetCursor(customCursorTexture, hotspot, CursorMode.Auto);
+    }
+
     public void ResetToCustomCursor()
     {
-        Cursor.SetCursor(customCursorTexture, Vector2.zero, CursorMode.Auto);
+        SetCustomCursor(customCursorTexture, hotspot);
     }
 }
