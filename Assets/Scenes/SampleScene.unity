@@ -1009,6 +1009,7 @@ MonoBehaviour:
   secondSubscript: {fileID: 732792250}
   attack: {fileID: 334231890}
   molecule: 
+  manager: {fileID: 1199720740}
 --- !u!4 &275930833
 Transform:
   m_ObjectHideFlags: 0
@@ -1208,7 +1209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a498c5f355088d449a52ffc49f849292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customCursorTexture: {fileID: 2800000, guid: 6fdfcd4167ed5e7488584241bb671bb2, type: 3}
+  customCursorTexture: {fileID: 2800000, guid: 3451779baa5804d40bf1e952eb56a81a, type: 3}
+  hotspot: {x: 0.156049, y: 0.9262}
   customCursorScript: {fileID: 1141248039}
 --- !u!61 &328785713
 BoxCollider2D:
@@ -1242,7 +1244,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.7210388, y: -5.690689}
+  m_Offset: {x: 3.7210388, y: 3.009426}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1253,7 +1255,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 376.84875, y: 118.67212}
+  m_Size: {x: 376.84875, y: 101.27189}
   m_EdgeRadius: 0
 --- !u!1 &328849797
 GameObject:
@@ -1307,7 +1309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &334231891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1634,6 +1636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customCursorTexture: {fileID: 2800000, guid: 3451779baa5804d40bf1e952eb56a81a, type: 3}
+  hotspot: {x: 0.156049, y: 0.9262}
   customCursorScript: {fileID: 1141248039}
 --- !u!1 &401343645
 GameObject:
@@ -5382,7 +5385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4b4cace124ff24e967f82a27cbfc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customCursorTexture: {fileID: 2800000, guid: 2e71a8202d3b4a3448ec85ced5a40265, type: 3}
+  customCursorTexture: {fileID: 2800000, guid: 5235a45d7adbb4346a2152298d55bff9, type: 3}
+  hotspot: {x: 0.156049, y: 0.9262}
 --- !u!4 &1141248040
 Transform:
   m_ObjectHideFlags: 0
@@ -6075,7 +6079,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a498c5f355088d449a52ffc49f849292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customCursorTexture: {fileID: 2800000, guid: 8ea795c067613354898068091ffc7130, type: 3}
+  customCursorTexture: {fileID: 2800000, guid: 3451779baa5804d40bf1e952eb56a81a, type: 3}
+  hotspot: {x: 0.156049, y: 0.9262}
   customCursorScript: {fileID: 1141248039}
 --- !u!61 &1428951061
 BoxCollider2D:
@@ -6109,7 +6114,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.7210388, y: 1.897522}
+  m_Offset: {x: 3.7210388, y: 4.636318}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6120,7 +6125,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 376.84875, y: 96.20203}
+  m_Size: {x: 376.84875, y: 109.50454}
   m_EdgeRadius: 0
 --- !u!1 &1432649763
 GameObject:
@@ -8607,6 +8612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customCursorTexture: {fileID: 2800000, guid: 3451779baa5804d40bf1e952eb56a81a, type: 3}
+  hotspot: {x: 0, y: 0}
   customCursorScript: {fileID: 1141248039}
 --- !u!1 &1997025841
 GameObject:
