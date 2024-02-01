@@ -23,6 +23,13 @@ public class battleManager : MonoBehaviour
     public battleState state;
     public AttackEffect attackEffect;
 
+    //Declaring audioClips for SFX
+    public AudioSource SFX_AudioSource;
+    public AudioClip lightningSound;
+    public AudioClip fireSound;
+    public AudioClip healSound;
+    //if you want more sounds, just add more of these lines above
+
     private string currentMolecule;
 
     public void setMolecule(string molecule)
@@ -124,11 +131,14 @@ public class battleManager : MonoBehaviour
             dialogueText.text = enemyUnit.unitName + " lands an attack!";
         }
         
+
         yield return new WaitForSeconds(1f);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage + dmgModifier);
         playerHUD.setHP(playerUnit.currentHP); // Update HP display
         attackEffect.TriggerAttackEffect(false); // Enemy attack
+        SFX_AudioSource.PlayOneShot(lightningSound, 0.1f);
+        
         yield return new WaitForSeconds(1f);
         
         if(isDead)
@@ -203,6 +213,9 @@ public class battleManager : MonoBehaviour
             return;
 
         StartCoroutine( playerAttack() );
+
+        SFX_AudioSource.PlayOneShot(fireSound, 0.2f);
+        
     }
 
     public void onHealButton()
@@ -211,5 +224,7 @@ public class battleManager : MonoBehaviour
             return;
 
         StartCoroutine( playerHeal() );
+        
+        SFX_AudioSource.PlayOneShot(healSound, 0.5f);
     }
 }

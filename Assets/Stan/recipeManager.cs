@@ -9,6 +9,9 @@ public class RecipeManager : MonoBehaviour
 
     public bool isPanelVisible = false;
 
+    public AudioSource SFX_AudioSource;
+    public AudioClip pageSound;
+
     void Start()
     {
         MovePanelOffScreen();
@@ -36,6 +39,7 @@ public class RecipeManager : MonoBehaviour
         isPanelVisible = true;
         recipePanel.SetActive(true);
         MovePanelOnScreen();
+        PlaySound();
     }
 
     public void HideRecipePanel()
@@ -43,6 +47,12 @@ public class RecipeManager : MonoBehaviour
         isPanelVisible = false;
         recipePanel.SetActive(false);
         MovePanelOffScreen();
+        PlaySound();
+    }
+
+    void PlaySound()
+    {
+        SFX_AudioSource.PlayOneShot(pageSound, 0.5f);
     }
 
     void MovePanelOnScreen()
