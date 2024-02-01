@@ -23,6 +23,13 @@ public class battleManager : MonoBehaviour
     public battleState state;
     public AttackEffect attackEffect;
 
+    //Declaring audioClips for SFX
+    public AudioSource SFX_AudioSource;
+    public AudioClip lightningSound;
+    public AudioClip fireSound;
+    public AudioClip healSound;
+    //if you want more sounds, just add more of these lines above
+
     private string currentMolecule;
 
     public void setMolecule(string molecule)
@@ -141,6 +148,8 @@ public class battleManager : MonoBehaviour
             state = battleState.PLAYERTURN;
             playerTurn();
         }
+
+        SFX_AudioSource.PlayOneShot(lightningSound, 0.1f);
     }
 
     private int calculateDamageModifier(string molecule)
@@ -203,6 +212,9 @@ public class battleManager : MonoBehaviour
             return;
 
         StartCoroutine( playerAttack() );
+
+        SFX_AudioSource.PlayOneShot(fireSound, 0.2f);
+        
     }
 
     public void onHealButton()
@@ -211,5 +223,7 @@ public class battleManager : MonoBehaviour
             return;
 
         StartCoroutine( playerHeal() );
+        
+        SFX_AudioSource.PlayOneShot(healSound, 0.5f);
     }
 }
