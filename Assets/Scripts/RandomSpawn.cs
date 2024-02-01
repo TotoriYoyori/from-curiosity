@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    public int cardID;  // Уникальный идентификатор карты
+    public int cardID;  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     public SpriteRenderer spriteRenderer;
 
-    // Словарь для соответствия между ID и объектом данных карты
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ ID пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     private Dictionary<int, CardData> idToCardDataMap = new Dictionary<int, CardData>();
 
     void Start()
     {
-        // Инициализация словаря
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         InitializeIdToCardDataMap();
 
-        // Присваиваем случайный ID и обновляем спрайт и тэг
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
         AssignRandomID();
         UpdateCardAppearance();
     }
 
-    // Инициализация словаря
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     void InitializeIdToCardDataMap()
     {
-        // Загрузка спрайтов и установка соответствий
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Sprite sprite0 = Resources.Load<Sprite>("Sprites/C");
         Sprite sprite1 = Resources.Load<Sprite>("Sprites/O");
         Sprite sprite2 = Resources.Load<Sprite>("Sprites/H");
@@ -32,7 +32,7 @@ public class Card : MonoBehaviour
         Sprite sprite5 = Resources.Load<Sprite>("Sprites/N");
         Sprite sprite6 = Resources.Load<Sprite>("Sprites/S");
 
-        // Установка соответствий между ID карты, спрайтом и тэгом
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ ID пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
         idToCardDataMap.Add(0, new CardData(sprite0, "C"));
         idToCardDataMap.Add(1, new CardData(sprite1, "O"));
         idToCardDataMap.Add(2, new CardData(sprite2, "H"));
@@ -42,20 +42,20 @@ public class Card : MonoBehaviour
         idToCardDataMap.Add(6, new CardData(sprite6, "S"));
     }
 
-    // Присваиваем случайный ID и обновляем спрайт и тэг
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
     void AssignRandomID()
     {
         cardID = Random.Range(0, idToCardDataMap.Count);
     }
 
-    // Обновляем спрайт и тэг в соответствии с ID
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ ID
     void UpdateCardAppearance()
     {
         spriteRenderer.sprite = idToCardDataMap[cardID].sprite;
         gameObject.tag = idToCardDataMap[cardID].tag;
     }
 
-    // Метод для изменения свойств карты
+    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     public void ChangeCardProperties()
     {
         AssignRandomID();
@@ -63,7 +63,7 @@ public class Card : MonoBehaviour
     }
 }
 
-// Класс для хранения данных карты
+// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 [System.Serializable]
 public class CardData
 {
