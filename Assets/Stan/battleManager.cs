@@ -131,11 +131,14 @@ public class battleManager : MonoBehaviour
             dialogueText.text = enemyUnit.unitName + " lands an attack!";
         }
         
+
         yield return new WaitForSeconds(1f);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage + dmgModifier);
         playerHUD.setHP(playerUnit.currentHP); // Update HP display
         attackEffect.TriggerAttackEffect(false); // Enemy attack
+        SFX_AudioSource.PlayOneShot(lightningSound, 0.1f);
+        
         yield return new WaitForSeconds(1f);
         
         if(isDead)
@@ -148,8 +151,6 @@ public class battleManager : MonoBehaviour
             state = battleState.PLAYERTURN;
             playerTurn();
         }
-
-        SFX_AudioSource.PlayOneShot(lightningSound, 0.1f);
     }
 
     private int calculateDamageModifier(string molecule)
