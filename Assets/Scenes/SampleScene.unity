@@ -2103,9 +2103,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cd5365cc3261a2648a755eeec3bb7378, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6862745, g: 0.6862745, b: 0.6862745, a: 0.6862745}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3934,7 +3934,7 @@ GameObject:
   - component: {fileID: 654519011}
   - component: {fileID: 654519010}
   m_Layer: 0
-  m_Name: Lightning
+  m_Name: fireEnemyAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3981,7 +3981,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3a3d8c848c8406e4ab42dbf210d458c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37278fce7e293b946a90d86cef853912, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4001,8 +4001,8 @@ Transform:
   m_GameObject: {fileID: 654519009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.53, y: 3.32, z: -2.71}
-  m_LocalScale: {x: 0.73484, y: 0.73484, z: 0.73484}
+  m_LocalPosition: {x: -7.45, y: 1.64, z: -2.71}
+  m_LocalScale: {x: 1.8909637, y: 1.8909637, z: 1.8909637}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4230,9 +4230,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cd5365cc3261a2648a755eeec3bb7378, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0.6862745}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4466,7 +4466,7 @@ Transform:
   m_GameObject: {fileID: 692356348}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.74, y: -1.49, z: -0.32}
+  m_LocalPosition: {x: 2.74, y: -1.13, z: -0.32}
   m_LocalScale: {x: 0.09464127, y: 0.09464127, z: 0.09464127}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4583,7 +4583,7 @@ Transform:
   m_GameObject: {fileID: 732792248}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.46, y: -2.24, z: -0.81}
+  m_LocalPosition: {x: 4.32, y: -1.73, z: -0.81}
   m_LocalScale: {x: 0.08444171, y: 0.08444171, z: 0.08444171}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5453,8 +5453,8 @@ Transform:
   m_GameObject: {fileID: 1103074700}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.44, y: -1.9100001, z: 0}
-  m_LocalScale: {x: 0.38567737, y: 0.38567737, z: 0.38567737}
+  m_LocalPosition: {x: 4.32, y: -1.42, z: 0}
+  m_LocalScale: {x: 0.21182173, y: 0.21182173, z: 0.21182173}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 675573227}
@@ -5499,9 +5499,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 52ba374a16e53d446b0cfc29512c3a86, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: cd5365cc3261a2648a755eeec3bb7378, type: 3}
+  m_Color: {r: 0.6862745, g: 0.6862745, b: 0.6862745, a: 0.6862745}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5732,7 +5732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1145703432
 Transform:
   m_ObjectHideFlags: 0
@@ -6138,7 +6138,7 @@ GameObject:
   - component: {fileID: 1358299871}
   - component: {fileID: 1358299870}
   m_Layer: 0
-  m_Name: light_copy 1
+  m_Name: lightningPlayerAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6185,7 +6185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2e3bc38d440e28a49aa0d57b8402fb77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3a3d8c848c8406e4ab42dbf210d458c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6205,8 +6205,8 @@ Transform:
   m_GameObject: {fileID: 1358299869}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0717344, y: 1.353088, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.97, y: 3.39, z: 0}
+  m_LocalScale: {x: 0.76135, y: 0.76135, z: 0.76135}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6238,7 +6238,7 @@ Transform:
   m_GameObject: {fileID: 1359975546}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.31, y: -1.52, z: -0.34}
+  m_LocalPosition: {x: -1.31, y: -1.13, z: -1.31}
   m_LocalScale: {x: 0.09464127, y: 0.09464127, z: 0.09464127}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6615,8 +6615,8 @@ Transform:
   m_GameObject: {fileID: 1422407650}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.44, y: -1.93, z: 0}
-  m_LocalScale: {x: 0.38567737, y: 0.38567737, z: 0.38567737}
+  m_LocalPosition: {x: 0.36, y: -1.42, z: 0}
+  m_LocalScale: {x: 0.21182173, y: 0.21182173, z: 0.21182173}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1644989949}
@@ -6661,9 +6661,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 52ba374a16e53d446b0cfc29512c3a86, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: cd5365cc3261a2648a755eeec3bb7378, type: 3}
+  m_Color: {r: 0.6862745, g: 0.6862745, b: 0.6862745, a: 0.6862745}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7869,7 +7869,7 @@ Transform:
   m_GameObject: {fileID: 1591111834}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46, y: -2.27, z: -0.83}
+  m_LocalPosition: {x: 0.36, y: -1.73, z: -0.83}
   m_LocalScale: {x: 0.08444171, y: 0.08444171, z: 0.08444171}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9595,7 +9595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2008255225
 Transform:
   m_ObjectHideFlags: 0
