@@ -22,6 +22,7 @@ public class battleManager : MonoBehaviour
 
     public battleState state;
     public AttackEffect attackEffect;
+    public GameObject healEffect;
 
     //Declaring audioClips for SFX
     public AudioSource SFX_AudioSource;
@@ -110,7 +111,15 @@ public class battleManager : MonoBehaviour
         state = battleState.ENEMYTURN;
         playerHUD.setHP(playerUnit.currentHP); // Update HP display
         dialogueText.text = "You reconsider your options.";
+
+        // Activate heal effect
+        healEffect.SetActive(true);
+
         yield return new WaitForSeconds(2f);
+        
+        // Deactivate heal effect
+        healEffect.SetActive(false);
+
         StartCoroutine(EnemyTurn());
     }
 
@@ -137,7 +146,7 @@ public class battleManager : MonoBehaviour
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage + dmgModifier);
         playerHUD.setHP(playerUnit.currentHP); // Update HP display
         attackEffect.TriggerAttackEffect(false); // Enemy attack
-        SFX_AudioSource.PlayOneShot(lightningSound, 0.1f);
+        SFX_AudioSource.PlayOneShot(fireSound, 0.2f);
         
         yield return new WaitForSeconds(1f);
         
@@ -213,8 +222,7 @@ public class battleManager : MonoBehaviour
             return;
 
         StartCoroutine( playerAttack() );
-
-        SFX_AudioSource.PlayOneShot(fireSound, 0.2f);
+        SFX_AudioSource.PlayOneShot(lightningSound, 0.1f);
         
     }
 
