@@ -4,7 +4,7 @@ Welcome to the realm of molecular mastery in From Curiosity! Dive into a unique 
 
 As an aspiring chemist, you wield the power to combine elements not just to create compounds but to vanquish adversaries. Unlike traditional word puzzles, From Curiosity challenges you to assemble molecules instead of words, each combination unlocking potent effects to aid you in combat. 
 
-# Planned Features
+# Features
 (The following list will be updated as the developers learn more about the game and what makes it fun!)
 
 ### Molecules Mastery
